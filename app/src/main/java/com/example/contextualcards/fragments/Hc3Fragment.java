@@ -1,4 +1,4 @@
-package com.example.contextualcards;
+package com.example.contextualcards.fragments;
 
 import android.os.Bundle;
 
@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.contextualcards.CardAdapter;
+import com.example.contextualcards.R;
 import com.example.contextualcards.models.Card;
 
 import java.io.Serializable;

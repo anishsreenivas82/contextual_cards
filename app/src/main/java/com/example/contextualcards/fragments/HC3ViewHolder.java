@@ -1,4 +1,4 @@
-package com.example.contextualcards;
+package com.example.contextualcards.fragments;
 
 import android.graphics.Color;
 import android.text.TextUtils;
@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.contextualcards.R;
 import com.example.contextualcards.models.Card;
 import com.example.contextualcards.models.Entity;
 import com.example.contextualcards.models.FormattedText;
