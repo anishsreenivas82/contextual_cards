@@ -109,7 +109,7 @@ public class Hc3ViewHolder extends RecyclerView.ViewHolder {
         });
 
         // Bind background color or image
-        BackgroundUtils.setBackground(cardContainer, card.getBgColor(), card.getBgGradient(), card.getUrl());
+        BackgroundUtils.setBackground(cardContainer, card.getBgColor(), card.getBgGradient(), card.getBgImage().getWebpImageUrl());
         return itemView;
     }
 

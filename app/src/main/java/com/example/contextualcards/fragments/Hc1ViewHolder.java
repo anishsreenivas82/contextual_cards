@@ -11,6 +11,7 @@ import com.example.contextualcards.R;
 import com.example.contextualcards.models.Card;
 import com.example.contextualcards.models.Entity;
 import com.example.contextualcards.models.FormattedText;
+import com.example.contextualcards.utils.BackgroundUtils;
 import com.example.contextualcards.utils.CtaUtils;
 import com.example.contextualcards.utils.TextUtils;
 
@@ -40,6 +41,8 @@ public class Hc1ViewHolder extends RecyclerView.ViewHolder{
             if(card.getUrl()!=null)
                 CtaUtils.openUrl(card.getUrl(),v.getContext());
         });
+        // Bind background
+        cardContainer.setCardBackgroundColor(android.graphics.Color.parseColor(card.getBgColor()));
         return itemView;
     }
 }

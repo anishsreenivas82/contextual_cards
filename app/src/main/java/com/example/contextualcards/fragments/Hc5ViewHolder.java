@@ -19,7 +19,7 @@ public class Hc5ViewHolder extends RecyclerView.ViewHolder{
 
     public View bind(Card card) {
         // Bind background
-        BackgroundUtils.setBackground(linearLayout, card.getBgColor(), card.getBgGradient(), card.getUrl());
+        BackgroundUtils.setBackground(linearLayout, card.getBgColor(), card.getBgGradient(), card.getBgImage().getWebpImageUrl());
         linearLayout.setOnClickListener(v->{
             if(card.getUrl()!=null)
                 CtaUtils.openUrl(card.getUrl(),v.getContext());
