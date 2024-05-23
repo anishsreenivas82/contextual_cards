@@ -61,14 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private void handleApiResponse(List<APIRes> apiResponses) {
         // Assuming the first API response contains the card groups
         List<CardGroup> cardGroups = apiResponses.get(0).getHcGroups();
-        Log.d("API Response Detail",new Gson().toJson(cardGroups));
-        List<Card> allCards = new ArrayList<>();
-        for (CardGroup cardGroup : cardGroups) {
-            allCards.addAll(cardGroup.getCards());
-        }
-        System.out.println("This is the test"+allCards.get(0));
-
-        CardAdapter adapter = new CardAdapter(allCards);
+        CardAdapter adapter = new CardAdapter(cardGroups);
         recyclerView.setAdapter(adapter);
     }
 }

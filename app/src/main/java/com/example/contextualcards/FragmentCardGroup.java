@@ -22,15 +22,15 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class FragmentCardGroup extends Fragment {
-    private static final String ARG_CARDS = "cards";
-    private static List<Card> cards;
+    private static final String ARG_CARDS = "cardGroups";
+    private static List<CardGroup> cardGroups;
     public FragmentCardGroup() {
         // Required empty public constructor
     }
     public static FragmentCardGroup newInstance(String param1, String param2) {
         FragmentCardGroup fragment = new FragmentCardGroup();
         Bundle args = new Bundle();
-        args.putSerializable(ARG_CARDS, (Serializable) cards);
+        args.putSerializable(ARG_CARDS, (Serializable) cardGroups);
         fragment.setArguments(args);
         return fragment;
     }
@@ -39,7 +39,7 @@ public class FragmentCardGroup extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            cards = (List<Card>) getArguments().getSerializable(ARG_CARDS);
+            cardGroups = (List<CardGroup>) getArguments().getSerializable(ARG_CARDS);
         }
     }
 
@@ -49,7 +49,7 @@ public class FragmentCardGroup extends Fragment {
         View view = inflater.inflate(R.layout.fragment_card_group, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.cardRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        CardAdapter adapter = new CardAdapter(cards);
+        CardAdapter adapter = new CardAdapter(cardGroups);
         recyclerView.setAdapter(adapter);
         return view;
     }
