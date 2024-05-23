@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#AC3838"
-            android:padding="8dp">
+            android:paddingHorizontal="16dp">
 
             <ImageView
                 android:id="@+id/hc3_image"

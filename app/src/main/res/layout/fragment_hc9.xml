@@ -3,21 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
     tools:context=".fragments.Hc9Fragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/hc9_card"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:layout_marginStart="42dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:theme="@style/Theme.MaterialComponents.DayNight">
         <TextView
             android:layout_width="wrap_content"
-            android:text="Hello World!"
+            android:text="This is a card"
             android:layout_height="wrap_content">
 
         </TextView>
