@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.contextualcards.R;
 import com.example.contextualcards.models.Card;
+import com.example.contextualcards.models.Cta;
 import com.example.contextualcards.models.Entity;
 import com.example.contextualcards.models.FormattedText;
+import com.example.contextualcards.utils.CtaUtils;
 import com.example.contextualcards.utils.TextUtils;
 
 public class Hc6ViewHolder extends RecyclerView.ViewHolder{
@@ -30,6 +32,12 @@ public class Hc6ViewHolder extends RecyclerView.ViewHolder{
         // Bind background
         if(card.getBgColor()!="" && card.getBgColor()!=null)
             cardContainer.setCardBackgroundColor(android.graphics.Color.parseColor(card.getBgColor()));
+
+        cardContainer.setOnClickListener(v->{
+            if(card.getUrl()!=null)
+                CtaUtils.openUrl(card.getUrl(),v.getContext());
+        });
+
         return itemView;
     }
 }

@@ -4,21 +4,25 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.contextualcards.R;
 import com.example.contextualcards.models.Card;
 import com.example.contextualcards.models.Entity;
 import com.example.contextualcards.models.FormattedText;
+import com.example.contextualcards.utils.CtaUtils;
 import com.example.contextualcards.utils.TextUtils;
 
 public class Hc1ViewHolder extends RecyclerView.ViewHolder{
     TextView title;
     TextView description;
+    CardView cardContainer;
     public Hc1ViewHolder(@NonNull View itemView) {
         super(itemView);
         title = itemView.findViewById(R.id.hc1_title);
         description = itemView.findViewById(R.id.hc1_description);
+        cardContainer = itemView.findViewById(R.id.hc1_card);
     }
 
     public View bind(Card card) {
@@ -32,6 +36,10 @@ public class Hc1ViewHolder extends RecyclerView.ViewHolder{
             description.setText(TextUtils.formatText(card.getFormattedDescription()));
         else if(card.getDescription() != null)
             description.setText(card.getDescription());
+        cardContainer.setOnClickListener(v->{
+            if(card.getUrl()!=null)
+                CtaUtils.openUrl(card.getUrl(),v.getContext());
+        });
         return itemView;
     }
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.contextualcards.R;
 import com.example.contextualcards.models.Card;
 import com.example.contextualcards.utils.BackgroundUtils;
+import com.example.contextualcards.utils.CtaUtils;
 
 public class Hc5ViewHolder extends RecyclerView.ViewHolder{
     LinearLayout linearLayout;
@@ -19,6 +20,10 @@ public class Hc5ViewHolder extends RecyclerView.ViewHolder{
     public View bind(Card card) {
         // Bind background
         BackgroundUtils.setBackground(linearLayout, card.getBgColor(), card.getBgGradient(), card.getUrl());
+        linearLayout.setOnClickListener(v->{
+            if(card.getUrl()!=null)
+                CtaUtils.openUrl(card.getUrl(),v.getContext());
+        });
         return itemView;
     }
 }
