@@ -1,9 +1,15 @@
 package com.example.contextualcards.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Icon {
+    @SerializedName("image_type")
     private String imageType;
+    @SerializedName("image_url")
     private String imageUrl;
+    @SerializedName("webp_image_url")
     private String webpImageUrl;
+    @SerializedName("aspect_ratio")
     private float aspectRatio;
 
     // Getters and Setters

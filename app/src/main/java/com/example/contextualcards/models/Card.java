@@ -1,6 +1,7 @@
 package com.example.contextualcards.models;
 
 import com.example.contextualcards.Interfaces.CardInterface;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -9,18 +10,28 @@ public class Card implements CardInterface {
     private String name;
     private String slug;
     private String title;
+    @SerializedName("formatted_title")
     private FormattedText formattedTitle;
     private String description;
+    @SerializedName("formatted_description")
     private FormattedText formattedDescription;
     private Icon icon;
     private String url;
+    @SerializedName("bg_image")
     private BgImage bgImage;
+    @SerializedName("bg_color")
     private String bgColor;
+    @SerializedName("bg_gradient")
     private Gradient bgGradient;
     private List<Cta> cta;
+    @SerializedName("is_disabled")
     private boolean isDisabled;
+    @SerializedName("is_shareable")
     private boolean isShareable;
+    @SerializedName("is_internal")
     private boolean isInternal;
+    private String designType;
+    private boolean isScrollable;
 
     @Override
     public int getId() {
@@ -29,6 +40,13 @@ public class Card implements CardInterface {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isScrollable() {
+        return isScrollable;
+    }
+    public void setScrollable(boolean scrollable) {
+        isScrollable = scrollable;
     }
 
     @Override
@@ -133,6 +151,15 @@ public class Card implements CardInterface {
     @Override
     public List<Cta> getCta() {
         return cta;
+    }
+
+
+    public String getDesignType() {
+        return designType;
+    }
+
+    public void setDesignType(String designType) {
+        this.designType = designType;
     }
 
     public void setCta(List<Cta> cta) {

@@ -1,11 +1,17 @@
 package com.example.contextualcards.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Cta {
     private String text;
     private String type;
+    @SerializedName("bg_color")
     private String bgColor;
+    @SerializedName("is_circular")
     private boolean isCircular;
+    @SerializedName("is_secondary")
     private boolean isSecondary;
+    @SerializedName("stroke_width")
     private int strokeWidth;
 
     // Getters and Setters

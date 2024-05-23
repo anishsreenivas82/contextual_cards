@@ -1,15 +1,21 @@
 package com.example.contextualcards.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class CardGroup {
     private int id;
     private String name;
+    @SerializedName("design_type")
     private String designType;
+    @SerializedName("card_type")
     private int cardType;
     private List<Card> cards;
+    @SerializedName("is_scrollable")
     private boolean isScrollable;
     private int height;
+    @SerializedName("is_full_width")
     private boolean isFullWidth;
     private String slug;
     private int level;
