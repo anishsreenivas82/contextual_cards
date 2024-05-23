@@ -2,6 +2,8 @@ package com.example.contextualcards.fragments;
 
 import android.graphics.Color;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -70,6 +72,40 @@ public class Hc3ViewHolder extends RecyclerView.ViewHolder {
         cardContainer.setOnClickListener(v->{
             if(card.getUrl()!=null)
                 CtaUtils.openUrl(card.getUrl(),v.getContext());
+        });
+
+        cardContainer.setOnLongClickListener(v->{
+            final float[] start = {0.0f};
+            final float[] end = {0.5f};
+            Animation animation = new TranslateAnimation(
+                    Animation.RELATIVE_TO_SELF, //fromXType
+                    start[0],                       //fromXValue
+                    Animation.RELATIVE_TO_SELF, //toXType
+                    end[0],                      //toXValue
+                    Animation.RELATIVE_TO_SELF, //fromYType
+                    0.0f,                       //fromYValue
+                    Animation.RELATIVE_TO_SELF, //toYType
+                    0.0f);                      //toYValue
+            animation.setDuration(500);
+            animation.setFillAfter(true);
+            animation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    float temp = start[0];
+                    start[0] = end[0];
+                    end[0] = temp;
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+            });
+            cardContainer.startAnimation(animation);
+            return true;
         });
 
         // Bind background color or image
