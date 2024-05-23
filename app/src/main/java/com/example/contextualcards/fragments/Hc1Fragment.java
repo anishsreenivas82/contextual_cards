@@ -22,21 +22,22 @@ import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Hc3Fragment#newInstance} factory method to
+ * Use the {@link Hc1Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Hc3Fragment extends Fragment {
+public class Hc1Fragment extends Fragment {
+
     private static final String ARG_CARDS = "cardGroups";
-    private List<CardGroup> hc3CardGroups;
-    public Hc3Fragment() {
+    private List<CardGroup> hc1CardGroups;
+
+    public Hc1Fragment() {
         // Required empty public constructor
     }
 
-    @NonNull
-    public static Hc3Fragment newInstance(List<CardGroup> cardGroups) {
-        Hc3Fragment fragment = new Hc3Fragment();
+    public static Hc1Fragment newInstance(List<Card> cards) {
+        Hc1Fragment fragment = new Hc1Fragment();
         Bundle args = new Bundle();
-        args.putSerializable(ARG_CARDS, (Serializable) cardGroups);
+        args.putSerializable(ARG_CARDS, (Serializable) cards);
         fragment.setArguments(args);
         return fragment;
     }
@@ -45,7 +46,7 @@ public class Hc3Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            hc3CardGroups = (List<CardGroup>) getArguments().getSerializable(ARG_CARDS);
+            hc1CardGroups = (List<CardGroup>) getArguments().getSerializable(ARG_CARDS);
         }
     }
 
@@ -53,14 +54,15 @@ public class Hc3Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hc3, container, false);
+        return inflater.inflate(R.layout.fragment_hc1, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        CardAdapter adapter = new CardAdapter(hc3CardGroups);
+        CardAdapter adapter = new CardAdapter(hc1CardGroups);
         recyclerView.setAdapter(adapter);
     }
 }

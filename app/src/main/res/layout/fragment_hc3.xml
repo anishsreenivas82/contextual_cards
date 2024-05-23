@@ -1,40 +1,129 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/fragment_hc3"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent"
+    tools:context=".fragments.Hc3Fragment">
+<RelativeLayout
+    android:id="@+id/hc3_card_items"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_launcher_foreground" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/remind_later_cv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="75dp"
+        android:theme="@style/Theme.MaterialComponents.DayNight"
+        app:cardBackgroundColor="#EEEEEE"
+        app:cardCornerRadius="5dp">
 
-    <TextView
-        android:id="@+id/title"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:drawableTop="@drawable/ic_remind_later"
+            android:text="Remind later"
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dismiss_now_cv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/remind_later_cv"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="75dp"
+        android:theme="@style/Theme.MaterialComponents.DayNight"
+        app:cardBackgroundColor="#EEEEEE"
+        app:cardCornerRadius="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:drawableTop="@drawable/ic_dismiss_now"
+            android:text="Dismiss now"
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/hc3_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Big display card with action"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:padding="8dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="#454aa6"
+        android:theme="@style/Theme.MaterialComponents.DayNight"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true">
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="This is a sample text for the subtitle that you can add to contextual cards"
-        android:textColor="@android:color/darker_gray"
-        android:gravity="center"
-        android:padding="8dp" />
 
-    <Button
-        android:id="@+id/actionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Action" />
-</LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#AC3838"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/hc3_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/hc3_card_asset"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.052"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hc3_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/hc3_image"
+                app:layout_constraintTop_toBottomOf="@+id/hc3_image"
+                tools:text="Big Card Display" />
+
+            <TextView
+                android:id="@+id/hc3_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingEnd="8dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/hc3_title"
+                app:layout_constraintTop_toBottomOf="@+id/hc3_title"
+                tools:text="placeholder" />
+
+            <Button
+                android:id="@+id/hc3_action_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@android:color/black"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/hc3_description"
+                app:layout_constraintTop_toBottomOf="@+id/hc3_description"
+                tools:text="Action" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>
+</FrameLayout>
+
